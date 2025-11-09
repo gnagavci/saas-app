@@ -31,8 +31,10 @@ const formSchema = z.object({
   topic: z.string().min(1, { message: "Topic is required." }),
   voice: z.string().min(1, { message: "Voice is required." }),
   style: z.string().min(1, { message: "Style is required." }),
-  duration: z.number().min(1, { message: "Duration is required." }),
+  duration: z.transform(Number).pipe(z.number().min(1, { message: "Duration is required." })),
 });
+
+//z.transform(Number).pipe(z.number())
 
 const CompanionForm = () => {
   // 1. Define your form.
@@ -190,6 +192,7 @@ const CompanionForm = () => {
                   type="number"
                   placeholder="15"
                   {...field}
+                  value={field.value}
                   className="input"
                 />
               </FormControl>
