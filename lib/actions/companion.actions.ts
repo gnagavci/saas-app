@@ -81,7 +81,7 @@ export const getRecentSessions = async (limit = 10) => {
 
     if(error) throw new Error(error.message);
 
-    return data.map(({ companions }) => companions);
+    return data.map(({ companions }) => companions); // destructure the companions from the data and return them as singular objects
 }
 
 export const getUserSessions = async (userId: string, limit = 10) => {
