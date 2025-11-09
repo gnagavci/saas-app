@@ -161,6 +161,7 @@ const CompanionForm = () => {
                     )}
                 />
                 <FormField
+                    control={form.control}
                     name="style"
                     render={({ field }) => (
                         <FormItem>
@@ -192,7 +193,7 @@ const CompanionForm = () => {
                 />
 
                 <FormField
-                    
+                    control={form.control}
                     name="duration"
                     render={({ field }) => (
                         <FormItem>
